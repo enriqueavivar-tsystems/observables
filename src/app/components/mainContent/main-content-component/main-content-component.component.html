@@ -6,45 +6,33 @@
         asincrónica y el manejo de múltiples valores.
     </p>
     <p>
-        Como editor, crea una Observableinstancia que define una función de suscriptor . Esta es la función que se
-        ejecuta cuando un consumidor llama al subscribe()método. La función de suscriptor define cómo obtener o generar
+        Como editor, crea una Observable instance que define una subscriber function . Esta es la función que se
+        ejecuta cuando un consumidor llama al método subscribe(). La función subscriber define cómo obtener o generar
         valores o mensajes para publicar. </p>
     <p>
-        Para ejecutar el observable que ha creado y comenzar a recibir notificaciones, llame a su subscribe()método,
+        Para ejecutar el observable que ha creado y comenzar a recibir notificaciones, llame a su método subscribe(),
         pasando un observador . Este es un objeto de JavaScript que define los controladores para las notificaciones que
-        recibe. La subscribe()llamada devuelve un Subscriptionobjeto que tiene un unsubscribe()método, al que llama para
+        recibe. La llamada a subscribe() devuelve un objeto Subscription que tiene un método unsubscribe(), al que llama para
         dejar de recibir notificaciones. </p>
-    <p>
-        Aquí hay un ejemplo que demuestra el modelo de uso básico al mostrar cómo se puede usar un observable para
-        proporcionar actualizaciones de geolocalización.
-    </p>
-    <picture>   
-        <p><strong>Crea un Observable que comenzará actualizaciones de geolocalización
-            cuando un consumidor se suscribe.</strong></p>
-        <img src="/assets/img/Captura1.PNG" class="card-img-top img-fluid"> 
 
-        <p><strong>La verificación simple de la API de geolocalización proporciona valores para publicar</strong></p>
-        <img src="/assets/img/Captura2.PNG" class="card-img-top img-fluid"> 
-            <p><strong>
-                Cuando el consumidor se da de baja, limpie los datos listos para la próxima suscripción.</strong></p>
-        <img src="/assets/img/Captura3.PNG" class="card-img-top img-fluid"> 
-    </picture>
+    
    
 </div>
 
 <div id="definicion">
     <h2>Definición</h2>
     <p>
-        Un controlador para recibir notificaciones observables implementa la Observerinterfaz. Es un objeto que define
+        Un controlador para recibir notificaciones observables implementa la interface del Observer. Es un objeto que define
         métodos de devolución de llamada para manejar los tres tipos de notificaciones que un observable puede enviar:
         <p>
+            <img src="/assets/img/ejemploDefinicion.PNG" class="card-img-top img-fluid">
 
 </div>
 
 <div id="suscripcion">
-    <h2>Suscripcion</h2>
+    <h2>Subscribing</h2>
     <p>
-        Una Observableinstancia comienza a publicar valores solo cuando alguien se suscribe a ella. Se suscribe llamando al subscribe()método de la instancia, pasando un objeto observador para recibir las notificaciones.
+        Una instancia Observable comienza a publicar valores solo cuando alguien se suscribe a ella. Se suscribe llamando al método subscribe() de la instancia, pasando un objeto observador para recibir las notificaciones.
     </p>
 </div>
 
@@ -53,7 +41,7 @@
 
     <p>
         Use el constructor Observable para crear una secuencia observable de cualquier tipo. El constructor toma como
-        argumento la función de suscriptor que se ejecuta al ejecutar-se el método subscribe () del observable. Una
+        argumento la función de suscriptor que se ejecuta al ejecutarse el método subscribe () del observable. Una
         función de suscriptor recibe un objeto Observador y puede publicar valores en el método next () del observador.
     </p>
 </div>
