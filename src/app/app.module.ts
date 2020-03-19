@@ -7,6 +7,7 @@ import { FooterComponentComponent } from './components/footer/footer-component/f
 import { MainContentComponentComponent } from './components/mainContent/main-content-component/main-content-component.component';
 import { SideContentComponentComponent } from './components/sideContent/side-content-component/side-content-component.component';
 import { HeaderComponentComponent } from './components/header/header-component/header-component.component';
+import { EjemploComponentComponent } from './components/ejemplo-component/ejemplo-component.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HeaderComponentComponent } from './components/header/header-component/h
     FooterComponentComponent,
     MainContentComponentComponent,
     SideContentComponentComponent,
-    HeaderComponentComponent
+    HeaderComponentComponent,
+    EjemploComponentComponent
   ],
   imports: [
     BrowserModule
