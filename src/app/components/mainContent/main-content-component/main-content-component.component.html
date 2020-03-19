@@ -1,26 +1,90 @@
 <div id="uso-basico">
-    <h2>Uso basico</h2>
+    <h2>Uso básico y términos</h2>
     <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque congue tempus mi ut faucibus. Suspendisse ornare velit tortor, at convallis nulla ultrices ac. Ut faucibus iaculis molestie. Morbi egestas enim id dolor aliquam dapibus. Nulla vitae risus
-        lorem. Nam semper nisl ex, in porttitor eros sagittis id. Etiam scelerisque dolor urna, ac feugiat eros fringilla ut. Aliquam sollicitudin nunc vel diam hendrerit, sed accumsan lorem semper. Maecenas sit amet lorem tempus, volutpat nulla eget,
-        gravida sem. Sed vel malesuada eros. Integer dignissim convallis justo, sed volutpat metus blandit ac. Phasellus nec tempor libero. Aenean quis ultricies diam.
+        Los observables brindan soporte para pasar mensajes entre editores y suscriptores en su aplicación. Los
+        observables ofrecen beneficios significativos sobre otras técnicas para el manejo de eventos, la programación
+        asincrónica y el manejo de múltiples valores.
     </p>
     <p>
-        Fusce metus mi, aliquam sit amet tristique vitae, sagittis a tortor. Nam placerat justo ut dictum lacinia. Curabitur non neque ac diam auctor tristique. Sed rutrum justo nulla, eget euismod nisl iaculis vel. Donec lobortis magna elit, eget euismod tortor
-        aliquet ac. Fusce congue turpis dui, eu suscipit dui convallis id. Ut pulvinar faucibus augue, id porttitor ante pharetra eget.
+        Como editor, crea una Observableinstancia que define una función de suscriptor . Esta es la función que se
+        ejecuta cuando un consumidor llama al subscribe()método. La función de suscriptor define cómo obtener o generar
+        valores o mensajes para publicar. </p>
+    <p>
+        Para ejecutar el observable que ha creado y comenzar a recibir notificaciones, llame a su subscribe()método,
+        pasando un observador . Este es un objeto de JavaScript que define los controladores para las notificaciones que
+        recibe. La subscribe()llamada devuelve un Subscriptionobjeto que tiene un unsubscribe()método, al que llama para
+        dejar de recibir notificaciones. </p>
+    <p>
+        Aquí hay un ejemplo que demuestra el modelo de uso básico al mostrar cómo se puede usar un observable para
+        proporcionar actualizaciones de geolocalización.
     </p>
+    <picture>   
+        <p><strong>Crea un Observable que comenzará actualizaciones de geolocalización
+            cuando un consumidor se suscribe.</strong></p>
+        <img src="/assets/img/Captura1.PNG" class="card-img-top img-fluid"> 
+
+        <p><strong>La verificación simple de la API de geolocalización proporciona valores para publicar</strong></p>
+        <img src="/assets/img/Captura2.PNG" class="card-img-top img-fluid"> 
+            <p><strong>
+                Cuando el consumidor se da de baja, limpie los datos listos para la próxima suscripción.</strong></p>
+        <img src="/assets/img/Captura3.PNG" class="card-img-top img-fluid"> 
+    </picture>
+   
 </div>
 
 <div id="definicion">
     <h2>Definición</h2>
     <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque congue tempus mi ut faucibus. Suspendisse ornare velit tortor, at convallis nulla ultrices ac. Ut faucibus iaculis molestie. Morbi egestas enim id dolor aliquam dapibus. Nulla vitae risus
-        lorem. Nam semper nisl ex, in porttitor eros sagittis id. Etiam scelerisque dolor urna, ac feugiat eros fringilla ut. Aliquam sollicitudin nunc vel diam hendrerit, sed accumsan lorem semper. Maecenas sit amet lorem tempus, volutpat nulla eget,
-        gravida sem. Sed vel malesuada eros. Integer dignissim convallis justo, sed volutpat metus blandit ac. Phasellus nec tempor libero. Aenean quis ultricies diam.
-    </p>
+        Un controlador para recibir notificaciones observables implementa la Observerinterfaz. Es un objeto que define
+        métodos de devolución de llamada para manejar los tres tipos de notificaciones que un observable puede enviar:
+        <p>
+
+</div>
+
+
+<div id="definicion">
+    <h2>Definición</h2>
     <p>
-        Fusce metus mi, aliquam sit amet tristique vitae, sagittis a tortor. Nam placerat justo ut dictum lacinia. Curabitur non neque ac diam auctor tristique. Sed rutrum justo nulla, eget euismod nisl iaculis vel. Donec lobortis magna elit, eget euismod tortor
-        aliquet ac. Fusce congue turpis dui, eu suscipit dui convallis id. Ut pulvinar faucibus augue, id porttitor ante pharetra eget.
+        Una Observableinstancia comienza a publicar valores solo cuando alguien se suscribe a ella. Se suscribe llamando al subscribe()método de la instancia, pasando un objeto observador para recibir las notificaciones.
+    </p>
+</div>
+
+<div id="crear-observables">
+    <h2>Creación de Observables</h2>
+
+    <p>
+        Use el constructor Observable para crear una secuencia observable de cualquier tipo. El constructor toma como
+        argumento la función de suscriptor que se ejecuta al ejecutar-se el método subscribe () del observable. Una
+        función de suscriptor recibe un objeto Observador y puede publicar valores en el método next () del observador.
+    </p>
+</div>
+
+
+<div id="multidifusion">
+    <h2>Multidifusion</h2>
+
+    <p>
+        Un observable típico crea una nueva ejecución independiente para cada observador suscrito. Cuando un observador
+        se suscribe, el observable conecta un controlador de eventos y entrega valores a ese observador. Cuando un
+        segundo observador se suscribe, el observable conecta un nuevo controlador de eventos y entrega valores a ese
+        segundo observador en una ejecución separada.
+    </p>
+
+    <p>
+        A veces, en lugar de comenzar una ejecución independiente para cada suscriptor, desea que cada suscripción
+        obtenga los mismos valores, incluso si los valores ya han comenzado a emitirse. Este podría ser el caso con algo
+        así como un observable de clics en el objeto del documento.
+    </p>
+
+    <p>
+        La multidifusión es la práctica de transmitir a una lista de múltiples suscriptores en una sola ejecución. Con
+        un observable de multidifusión, no registra varios oyentes en el documento, sino que reutiliza el primer oyente
+        y envía valores a cada suscriptor.
+    </p>
+
+    <p>
+        Al crear un observable, debe determinar cómo desea que se use ese observable y si desea o no multidifusión de
+        sus valores.
     </p>
 </div>
 
