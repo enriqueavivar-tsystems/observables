@@ -40,10 +40,10 @@
 <div id="crear-observables">
     <h2>Creación de Observables</h2>
 <p>
-Para crear y ver un observable, vamos a necesitar tres elementos: el Sujeto: que es el encargado de generar y emitir los eventos de actualización del almacén de datos, el Observable: que es un objeto que permite observar los eventos emitidos por el sujeto y finalmente la subscripción: generada a partir del observable.
+Para crear y ver un observable, vamos a necesitar tres elementos: el Subject: que es el encargado de generar y emitir los eventos de actualización del almacén de datos, el Observable: que es un objeto que permite observar los eventos emitidos por el sujeto y finalmente la subscripción: generada a partir del observable.
 </p>
 <p>
-El servicio de clientes será el encargado de usar el "sujeto" para generar los eventos cuando se agreguen nuevos clientes. Este servicio también será el encargado de entregar el observable a los componentes que necesiten escuchar los eventos emitidos por el sujeto.
+El servicio de clientes será el encargado de usar el "subject" para generar los eventos cuando se agreguen nuevos clientes. Este servicio también será el encargado de entregar el observable a los componentes que necesiten escuchar los eventos emitidos por el subject.
 Aquellos componentes escuchando eventos son los observadores (observer). Estos observadores declaran y usan el observable y, mediante una suscripción, estarán enterados de cualquier cambio en aquello que se está observando.
 </p>
 <h6>Producir el flujo de eventos a observar </h6>
