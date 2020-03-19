@@ -1,4 +1,4 @@
-<div id="uso-basico">
+<div id="uso-basico" class="section">
     <h2>Uso básico y términos</h2>
     <p>
         Los observables brindan soporte para pasar mensajes entre editores y suscriptores en su aplicación. Los observables ofrecen beneficios significativos sobre otras técnicas para el manejo de eventos, la programación asincrónica y el manejo de múltiples
@@ -14,7 +14,7 @@
 
 </div>
 
-<div id="definicion">
+<div id="definicion" class="section">
     <h2>Definición</h2>
     <p>
         Un controlador para recibir notificaciones observables implementa la interface del Observer. Es un objeto que define métodos de devolución de llamada para manejar los tres tipos de notificaciones que un observable puede enviar:
@@ -22,14 +22,14 @@
             <img src="/assets/img/ejemploDefinicion.PNG" class="card-img-top img-fluid">
 </div>
 
-<div id="suscripcion">
+<div id="suscripcion" class="section">
     <h2>Subscribing</h2>
     <p>
         Una instancia Observable comienza a publicar valores solo cuando alguien se suscribe a ella. Se suscribe llamando al método subscribe() de la instancia, pasando un objeto observador para recibir las notificaciones.
     </p>
 </div>
 
-<div id="crear-observables">
+<div id="crear-observables" class="section">
     <h2>Creación de Observables</h2>
 
     <p>
@@ -39,7 +39,7 @@
 </div>
 
 
-<div id="multidifusion">
+<div id="multidifusion" class="section">
     <h2>Multidifusion</h2>
 
     <p>
@@ -47,22 +47,22 @@
         el observable conecta un nuevo controlador de eventos y entrega valores a ese segundo observador en una ejecución separada.
     </p>
 
-    <p>
+</div>
 
 
-        <div id="ejemplos">
+<div id="ejemplos" class="section">
 
-            <h2>Creación de objetos de ejemplos</h2>
-            <p>Ejemplo de creación de objetos con la implementación de los módulos que hemos aprendido</p>
+    <h2>Creación de objetos de ejemplos</h2>
+    <p>Ejemplo de creación de objetos con la implementación de los módulos que hemos aprendido</p>
 
-            <input name="ejemplo-name" type="text" class="form-control" (input)="onUpdateEjemploName($event)">
+    <input name="ejemplo-name" type="text" class="form-control" (input)="onUpdateEjemploName($event)">
 
-            <!-- <p>{{ ejemploName }}</p> -->
+    <!-- <p>{{ ejemploName }}</p> -->
 
-            <button class="btn btn-primary" (click)="onCreateEjemplo()">Añadir un archivo de ejemplo</button>
+    <button class="btn btn-primary" (click)="onCreateEjemplo()">Añadir un archivo de ejemplo</button>
 
-            <p *ngIf="ejemploCreated">Nuevo objeto creado</p>
+    <p *ngIf="ejemploCreated">Nuevo objeto creado</p>
 
 
-            <app-ejemplo-component *ngFor="let ejemplo of ejemplos" [ejemploName]="ejemplo"></app-ejemplo-component>
-        </div>
+    <app-ejemplo-component *ngFor="let ejemplo of ejemplos" [ejemploName]="ejemplo"></app-ejemplo-component>
+</div>
