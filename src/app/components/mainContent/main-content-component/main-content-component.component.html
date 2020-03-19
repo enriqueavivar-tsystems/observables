@@ -89,26 +89,13 @@
     </p>
 </div>
 
-<div id="suscripcion">
-    <h2>Sección 3</h2>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque congue tempus mi ut faucibus. Suspendisse ornare velit tortor, at convallis nulla ultrices ac. Ut faucibus iaculis molestie. Morbi egestas enim id dolor aliquam dapibus. Nulla vitae risus
-        lorem. Nam semper nisl ex, in porttitor eros sagittis id. Etiam scelerisque dolor urna, ac feugiat eros fringilla ut. Aliquam sollicitudin nunc vel diam hendrerit, sed accumsan lorem semper. Maecenas sit amet lorem tempus, volutpat nulla eget,
-        gravida sem. Sed vel malesuada eros. Integer dignissim convallis justo, sed volutpat metus blandit ac. Phasellus nec tempor libero. Aenean quis ultricies diam.
-    </p>
-    <p>
-        Fusce metus mi, aliquam sit amet tristique vitae, sagittis a tortor. Nam placerat justo ut dictum lacinia. Curabitur non neque ac diam auctor tristique. Sed rutrum justo nulla, eget euismod nisl iaculis vel. Donec lobortis magna elit, eget euismod tortor
-        aliquet ac. Fusce congue turpis dui, eu suscipit dui convallis id. Ut pulvinar faucibus augue, id porttitor ante pharetra eget.
-    </p>
-</div>
-
 <div id="crear-observables">
     <h2>Creación de Observables</h2>
 <p>
-Para crear y ver un observable, vamos a necesitar tres elementos: el Sujeto: que es el encargado de generar y emitir los eventos de actualización del almacén de datos, el Observable: que es un objeto que permite observar los eventos emitidos por el sujeto y finalmente la subscripción: generada a partir del observable.
+Para crear y ver un observable, vamos a necesitar tres elementos: el Subject: que es el encargado de generar y emitir los eventos de actualización del almacén de datos, el Observable: que es un objeto que permite observar los eventos emitidos por el sujeto y finalmente la subscripción: generada a partir del observable.
 </p>
 <p>
-El servicio de clientes será el encargado de usar el "sujeto" para generar los eventos cuando se agreguen nuevos clientes. Este servicio también será el encargado de entregar el observable a los componentes que necesiten escuchar los eventos emitidos por el sujeto.
+El servicio de clientes será el encargado de usar el "subject" para generar los eventos cuando se agreguen nuevos clientes. Este servicio también será el encargado de entregar el observable a los componentes que necesiten escuchar los eventos emitidos por el subject.
 Aquellos componentes escuchando eventos son los observadores (observer). Estos observadores declaran y usan el observable y, mediante una suscripción, estarán enterados de cualquier cambio en aquello que se está observando.
 </p>
 <h6>Producir el flujo de eventos a observar </h6>
